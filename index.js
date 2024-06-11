@@ -6,12 +6,14 @@ for (let i = 0; i < NumberOfButtons; i++) {
     var CharBtn = this.innerHTML;
     
     MakeSound(CharBtn);
-    
+    MakeAnimation(CharBtn)
+     
 })
 }
 
 document.addEventListener("keypress",function(event){
     MakeSound(event.key);
+    MakeAnimation(event.key)
 })
 
 function MakeSound(key){
@@ -47,6 +49,15 @@ function MakeSound(key){
         default:
             break;
     }
+}
+
+function MakeAnimation(CurrentKey){
+    var ActiveButton = document.querySelector("." + CurrentKey);
+    ActiveButton.classList.add("pressed")
+
+    setTimeout(function (){
+        ActiveButton.classList.remove("pressed")
+    }, 100);
 }
 
    

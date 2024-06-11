@@ -61,3 +61,8 @@ body{
 .l{
     background-image: url("./asset/snare.png");
 }
+.pressed{
+    opacity: 0.5;
+    border: 4px solid rgb(0, 0, 0);
+    color: white;
+}
